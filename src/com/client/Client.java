@@ -10,6 +10,9 @@ public class Client implements Listener {
 
     }
 
+    /**
+     * Listening from terminal stream
+     */
     @Override
     public void listen() {
 
@@ -19,6 +22,5 @@ public class Client implements Listener {
     public void finish() {
     }
 
-    ;
 
 }
