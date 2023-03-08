@@ -2,9 +2,8 @@ package com.commands;
 
 
 import com.client.Client;
+import com.study_group.StudyGroup;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 
 public class InfoCommand extends Command {
@@ -14,7 +13,6 @@ public class InfoCommand extends Command {
 
     @Override
     public void execute(Client client, String[] args) throws Exception {
-
     }
 
 }
