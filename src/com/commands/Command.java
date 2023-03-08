@@ -1,7 +1,6 @@
 package com.commands;
 import com.client.Client;
 
-import java.io.IOException;
 
 /**
  * Abstract class for commands which user can execute to manipulate with a collection
