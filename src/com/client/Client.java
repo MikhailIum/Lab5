@@ -31,5 +31,9 @@ public class Client implements Listener {
     public void finish() {
     }
 
+    public void executeCommands(String[] line){
+
+    }
+
 
 }
