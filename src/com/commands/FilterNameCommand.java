@@ -7,6 +7,10 @@ import com.study_group.StudyGroup;
 
 import java.util.LinkedList;
 
+
+/**
+ * Shows those groups which names contain certain substring
+ */
 public class FilterNameCommand extends Command {
     public FilterNameCommand(String name, String description) {
         super(name, description);
