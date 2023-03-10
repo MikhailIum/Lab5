@@ -38,11 +38,11 @@ public class AddCommand extends Command {
     }
 
     /**
-     * Finds out which delimetr is used by the user(" " / ", " / ",")
+     * Finds out which delimiter is used by the user(" " / ", " / ",")
      * @param coords - String user printed as a coordinates
-     * @return delimetr(String)
+     * @return delimiter(String)
      */
-    private static String getDelimetr(String coords){
+    private static String getDelimiter(String coords){
         String del = " ";
         if (coords.contains(", "))
             del = ", ";
@@ -57,12 +57,12 @@ public class AddCommand extends Command {
     public static Coordinates getCoords() throws IOException {
         System.out.print(TextColor.ANSI_PURPLE + "Coordinates" + TextColor.ANSI_BLUE + "(x - double(<=860), y - integer)" + TextColor.ANSI_PURPLE +": " + TextColor.ANSI_RESET);
         String coords = in.nextLine();
-        String del = getDelimetr(coords);
+        String del = getDelimiter(coords);
 
         while (!Check.checkCoords(coords, del)){
             System.out.print(TextColor.ANSI_PURPLE + "Coordinates" + TextColor.ANSI_BLUE + "(x - double(<=860), y - integer)" + TextColor.ANSI_PURPLE +": " + TextColor.ANSI_RESET);
             coords = in.nextLine();
-            del = getDelimetr(coords);
+            del = getDelimiter(coords);
         }
 
         ArrayList<String> cord_ar = new ArrayList<>(Arrays.asList(coords.split(del)));
@@ -97,12 +97,12 @@ public class AddCommand extends Command {
      * Allows user to set the semester on which is the new group
      */
     public static Semester getSemester() throws IOException {
-        System.out.print(TextColor.ANSI_PURPLE + "Semester: " + "\n\t1 - First\n\t2 - Second\n\t4 - Fourth" +
-                "\n\t6 - Sixth\n\t7 - Seventh\n" + TextColor.ANSI_RESET);
+        System.out.print(TextColor.ANSI_PURPLE + "Semester: " + "\n\t1 - First\n\t2 - Second\n\t3 - Fourth" +
+                "\n\t4 - Sixth\n\t5 - Seventh\n" + TextColor.ANSI_RESET);
         String sem;
-        while (!Check.checkSemester(sem = in.nextLine().replace(" ", ""))){
-            System.out.print(TextColor.ANSI_PURPLE + "Semester: " + "\n\t1 - First\n\t2 - Second\n\t4 - Fourth" +
-                    "\n\t6 - Sixth\n\t7 - Seventh\n" + TextColor.ANSI_RESET);
+        while (!Check.checkEnum(sem = in.nextLine().replace(" ", ""), 1, 5)){
+            System.out.print(TextColor.ANSI_PURPLE + "Semester: " + "\n\t1 - First\n\t2 - Second\n\t3 - Fourth" +
+                    "\n\t4 - Sixth\n\t5 - Seventh\n" + TextColor.ANSI_RESET);
         }
 
         return Semester.find(sem);
@@ -127,7 +127,7 @@ public class AddCommand extends Command {
     public static Color getHairColor() throws IOException {
         System.out.print(TextColor.ANSI_PURPLE + "Hair color: " + "\n\t1 - Black\n\t2 - Brown\n\t3 - Blue\n"+ TextColor.ANSI_RESET);
         String color;
-        while (!Check.checkHairColor(color = in.nextLine().replace(" ", ""))){
+        while (!Check.checkEnum(color = in.nextLine().replace(" ", ""), 1, 3)){
             System.out.print(TextColor.ANSI_PURPLE + "Hair color: " + "\n\t1 - Black\n\t2 - Brown\n\t3 - Blue\n"+ TextColor.ANSI_RESET);
         }
 
@@ -140,7 +140,7 @@ public class AddCommand extends Command {
     public static Country getNationality() throws IOException {
         System.out.print(TextColor.ANSI_PURPLE + "Nationality: " + "\n\t1 - UK\n\t2 - USA\n\t3 - France\n\t4 - Thailand\n" + TextColor.ANSI_RESET);
         String country;
-        while (!Check.checkNationality(country = in.nextLine().replace(" ", ""))){
+        while (!Check.checkEnum(country = in.nextLine().replace(" ", ""), 1, 4)){
             System.out.print(TextColor.ANSI_PURPLE + "Nationality: " + "\n\t1 - UK\n\t2 - USA\n\t3 - France\n\t4 - Thailand\n" + TextColor.ANSI_RESET);
         }
 

@@ -34,8 +34,7 @@ public class UpdateCommand extends Command {
                     "13 - admin's location z coordinate\n14 - admin location's name" + TextColor.ANSI_RESET);
 
             Scanner in = new Scanner(System.in);
-            while (!Check.checkUpdate((num = in.nextLine()))) {
-            }
+            while (!Check.checkEnum((num = in.nextLine()), 0, 14)) {}
             if (!Objects.equals(num, "0")){
                 toUpdate.updateField(Integer.parseInt(num));
             }
