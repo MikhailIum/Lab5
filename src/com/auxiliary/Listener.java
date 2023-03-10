@@ -12,10 +12,5 @@ public interface Listener {
     /**
      * Listening from a stream
      */
-    public void listen();
-
-    /**
-     * Close all the sources, ready to be closed
-     */
-    public void finish();
+    public void listen() throws Exception;
 }
