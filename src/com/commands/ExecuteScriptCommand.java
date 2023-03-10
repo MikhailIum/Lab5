@@ -3,12 +3,10 @@ package com.commands;
 
 import com.auxiliary.TextColor;
 import com.client.Client;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
-
 
 /**
  * Puts lines from a given file to the input stream(like if user would write them)

@@ -7,10 +7,10 @@ public interface Listener {
     /**
      * Opening sources, getting ready for listening
      */
-    public void start();
+    void start();
 
     /**
      * Listening from a stream
      */
-    public void listen() throws Exception;
+    void listen() throws Exception;
 }
