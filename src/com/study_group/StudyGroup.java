@@ -1,7 +1,7 @@
 package com.study_group;
 
 import com.auxiliary.TextColor;
-
+import com.commands.AddCommand;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -13,13 +13,13 @@ import java.util.UUID;
  */
 public class StudyGroup {
     private final UUID id;
-    private final String name;
-    private final Coordinates coordinates;
+    private String name;
+    private Coordinates coordinates;
     private final LocalDateTime creationDate;
-    private final Integer studentsCount;
-    private final int expelledStudents;
-    private final long shouldBeExpelled;
-    private final Semester semesterEnum;
+    private Integer studentsCount;
+    private int expelledStudents;
+    private long shouldBeExpelled;
+    private Semester semesterEnum;
     private final Person groupAdmin;
 
     public StudyGroup(String name, Coordinates coordinates, Integer studentsCount, int expelledStudents, long shouldBeExpelled, Semester semesterEnum, Person groupAdmin, LocalDateTime creationDate, UUID id) {
@@ -40,8 +40,15 @@ public class StudyGroup {
      * @param num - number of the field user wants to update
      */
     public void updateField(int num) throws IOException {
-        //TODO: add this method
-    }
+        switch (num) {
+            case (1) : this.name = AddCommand.getGroupName();
+            case (2) : this.coordinates = AddCommand.getCoords();
+            case (3) : this.studentsCount = AddCommand.getStudentsCount("Number of students");
+            case (4) : this.expelledStudents = AddCommand.getStudentsCount("Number of expelled students");
+            case (5) : this.shouldBeExpelled = AddCommand.getStudentsCount("Number of students who should be expelled");
+            case (6) : this.semesterEnum = AddCommand.getSemester();
+            default : groupAdmin.updateField(num);
+        }    }
 
 
 

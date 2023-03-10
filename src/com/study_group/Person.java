@@ -11,10 +11,10 @@ import java.util.Objects;
  * Admin of the study group
  */
 public class Person {
-    private final String name;
-    private final java.time.LocalDate birthday;
-    private final Color hairColor;
-    private final Country nationality;
+    private String name;
+    private java.time.LocalDate birthday;
+    private Color hairColor;
+    private Country nationality;
 
     private final Location location;
 
@@ -73,6 +73,12 @@ public class Person {
      * @param num - number of the field user wants to update
      */
     public void updateField(int num) throws IOException {
-        //TODO: add this method
+        switch (num) {
+            case (7): this.name = AddCommand.getGroupName();
+            case (8) : this.birthday = AddCommand.getBirthday();
+            case (9) : this.hairColor = AddCommand.getHairColor();
+            case (10) : this.nationality = AddCommand.getNationality();
+            default : location.updateField(num);
+        }
     }
 }

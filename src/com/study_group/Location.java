@@ -60,6 +60,11 @@ public class Location {
      * @param num - number of the field user wants to update
      */
     public void updateField(int num) throws IOException {
-        //TODO: add this method
+        switch (num) {
+            case (11) : this.x = Float.parseFloat(AddCommand.getCoordinate("x"));
+            case (12) : this.y = Integer.parseInt(AddCommand.getCoordinate("y"));
+            case (13) : this.z = Long.parseLong(AddCommand.getCoordinate("z"));
+            case (14) : this.name = AddCommand.getGroupName();
+        }
     }
 }
