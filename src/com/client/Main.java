@@ -8,6 +8,5 @@ public class Main {
         Client client = new Client();
         client.start();
         client.listen();
-        client.finish();
     }
 }
