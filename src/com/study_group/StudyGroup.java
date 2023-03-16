@@ -65,17 +65,23 @@ public class StudyGroup {
     switch (num) {
       case (1):
         this.name = AddCommand.getGroupName();
+        break;
       case (2):
         this.coordinates = AddCommand.getCoords();
+        break;
       case (3):
         this.studentsCount = AddCommand.getStudentsCount("Number of students");
+        break;
       case (4):
         this.expelledStudents = AddCommand.getStudentsCount("Number of expelled students");
+        break;
       case (5):
         this.shouldBeExpelled =
             AddCommand.getStudentsCount("Number of students who should be expelled");
+        break;
       case (6):
         this.semesterEnum = AddCommand.getSemester();
+        break;
       default:
         groupAdmin.updateField(num);
     }

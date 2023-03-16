@@ -19,7 +19,10 @@ public class RemoveCommand extends Command {
       return;
     }
     ExitCommand.isSaved = false;
-    Hint.nameHint(args.length, client);
+    if (args.length == 1) {
+      Hint.nameHint(args.length, client);
+      return;
+    }
     StudyGroup to_remove = StudyGroup.findByName(client.groups, args[1]);
     if (to_remove != null) {
       client.groups.remove(to_remove);

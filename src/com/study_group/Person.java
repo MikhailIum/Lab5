@@ -129,12 +129,16 @@ public class Person {
     switch (num) {
       case (7):
         this.name = AddCommand.getGroupName();
+        break;
       case (8):
         this.birthday = AddCommand.getBirthday();
+        break;
       case (9):
         this.hairColor = AddCommand.getHairColor();
+        break;
       case (10):
         this.nationality = AddCommand.getNationality();
+        break;
       default:
         location.updateField(num);
     }

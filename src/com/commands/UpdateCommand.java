@@ -46,7 +46,10 @@ public class UpdateCommand extends Command {
   @Override
   public void execute(Client client, String[] args) throws Exception {
     ExitCommand.isSaved = false;
-    Hint.nameHint(args.length, client);
+    if (args.length == 1){
+      Hint.nameHint(args.length, client);
+      return;
+    }
 
     StudyGroup toUpdate = StudyGroup.findByName(client.groups, args[1]);
     if (toUpdate != null) {

@@ -82,12 +82,16 @@ public class Location {
     switch (num) {
       case (11):
         this.x = Float.parseFloat(AddCommand.getCoordinate("x"));
+        break;
       case (12):
         this.y = Integer.parseInt(AddCommand.getCoordinate("y"));
+        break;
       case (13):
         this.z = Long.parseLong(AddCommand.getCoordinate("z"));
+        break;
       case (14):
         this.name = AddCommand.getGroupName();
+        break;
     }
   }
 }

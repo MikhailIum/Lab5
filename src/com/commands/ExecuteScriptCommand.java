@@ -6,7 +6,7 @@ import com.client.Client;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.util.Objects;import java.util.Scanner;
 
 /**
  * Puts lines from a given file to the input stream(like if user would write them)
@@ -33,7 +33,9 @@ public class ExecuteScriptCommand extends Command {
         while (in.hasNext()){
             String lineToShow = in.nextLine();
             System.out.println(TextColor.ANSI_GREEN + lineToShow + TextColor.ANSI_RESET);
-            client.executeCommands(lineToShow.split(" "));
+            String[] arg = lineToShow.split(" ");
+            if (!(Objects.equals(arg[0], "execute_script") && (Objects.equals(arg[1], filename))))
+                client.executeCommands(arg);
         }
     }
 
