@@ -34,8 +34,9 @@ public class ExecuteScriptCommand extends Command {
             String lineToShow = in.nextLine();
             System.out.println(TextColor.ANSI_GREEN + lineToShow + TextColor.ANSI_RESET);
             String[] arg = lineToShow.split(" ");
-            if (!(Objects.equals(arg[0], "execute_script") && (Objects.equals(arg[1], filename))))
-                client.executeCommands(arg);
+            if (Objects.equals(arg[0], "execute_script") && (Objects.equals(arg[1], filename)))
+                System.out.println(TextColor.ANSI_YELLOW + "You can't execute the same script here" + TextColor.ANSI_YELLOW);
+            else client.executeCommands(arg);
         }
     }
 
