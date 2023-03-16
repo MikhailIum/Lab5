@@ -18,7 +18,6 @@ public class RemoveCommand extends Command {
           TextColor.ANSI_YELLOW + "The collection is already empty!\n" + TextColor.ANSI_RESET);
       return;
     }
-    ExitCommand.isSaved = false;
     if (args.length == 1) {
       Hint.nameHint(args.length, client);
       return;
@@ -31,5 +30,6 @@ public class RemoveCommand extends Command {
       System.out.print(TextColor.ANSI_YELLOW + "There is no such a group!\n");
       Hint.nameHint(1, client);
     }
+    ExitCommand.isSaved = false;
   }
 }

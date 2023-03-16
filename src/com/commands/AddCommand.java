@@ -291,7 +291,6 @@ public class AddCommand extends Command {
 
   @Override
   public void execute(Client client, String[] args) throws IOException {
-    ExitCommand.isSaved = false;
     String name = "";
     boolean isNameSet = false;
     if (args.length == 3) {
@@ -309,5 +308,6 @@ public class AddCommand extends Command {
     }
     client.groups.add(getStudyGroup(name, isNameSet));
     System.out.println("New group has been added");
+    ExitCommand.isSaved = false;
   }
 }

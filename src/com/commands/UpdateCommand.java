@@ -45,7 +45,10 @@ public class UpdateCommand extends Command {
   /** Enables update mode, where user can choose which fields he/she wants to change */
   @Override
   public void execute(Client client, String[] args) throws Exception {
-    ExitCommand.isSaved = false;
+    if (client.groups.isEmpty()) {
+      System.out.println("Collection is empty!");
+      return;
+    }
     if (args.length == 1){
       Hint.nameHint(args.length, client);
       return;
@@ -59,5 +62,6 @@ public class UpdateCommand extends Command {
           TextColor.ANSI_YELLOW + "There is no such a group!\n" + "Possible names:\n" + "{");
       Hint.nameHint(1, client);
     }
+    ExitCommand.isSaved = false;
   }
 }

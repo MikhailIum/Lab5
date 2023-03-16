@@ -11,8 +11,8 @@ public class ClearCommand extends Command {
 
   @Override
   public void execute(Client client, String[] args) throws Exception {
-    ExitCommand.isSaved = false;
     client.groups = new LinkedList<>();
     System.out.println("Collection is successfully cleared!");
+    ExitCommand.isSaved = false;
   }
 }

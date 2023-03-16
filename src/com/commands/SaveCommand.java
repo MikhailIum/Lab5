@@ -21,13 +21,13 @@ public class SaveCommand extends Command {
             System.out.println(TextColor.ANSI_YELLOW + "Collection is already saved\n" + TextColor.ANSI_RESET);
             return;
         }
-        ExitCommand.isSaved = true;
         OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(client.FILE_PATH));
 
         for (StudyGroup group : client.groups) {
             out.write(group.getParams());
         }
         System.out.println("Collection is successfully saved!\n");
+        ExitCommand.isSaved = true;
         out.close();
     }
 
