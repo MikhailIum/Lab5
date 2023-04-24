@@ -10,7 +10,7 @@ import java.util.Scanner;
  * process
  */
 public class ExitCommand extends Command {
-  public static boolean isSaved;
+  public static boolean isSaved = true;
 
   public ExitCommand(String name, String description) {
     super(name, description);

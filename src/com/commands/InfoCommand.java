@@ -5,7 +5,7 @@ import static org.apache.commons.lang3.ObjectUtils.max;
 import com.client.Client;
 import com.study_group.StudyGroup;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatter;import java.util.Comparator;import java.util.Objects;
 
 /** Shows information about the collection */
 public class InfoCommand extends Command {
@@ -19,6 +19,7 @@ public class InfoCommand extends Command {
     for (StudyGroup group : client.groups) {
       last_update = max(last_update, group.getCreationDate());
     }
+
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
 
     System.out.println("Collection name: Study Group, number of elements: " + client.groups.size());

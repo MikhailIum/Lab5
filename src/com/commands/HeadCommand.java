@@ -13,6 +13,6 @@ public class HeadCommand extends Command {
   public void execute(Client client, String[] args) throws Exception {
     if (client.groups.isEmpty())
       System.out.println(TextColor.ANSI_YELLOW + "Collection is empty!!\n" + TextColor.ANSI_RESET);
-    else System.out.println(client.groups.getFirst().toString());
+    else System.out.println(client.groups.stream().findFirst());
   }
 }

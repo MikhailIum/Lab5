@@ -17,9 +17,7 @@ public class ShowCommand extends Command {
         if (client.groups.isEmpty())
             System.out.println(TextColor.ANSI_YELLOW + "Collection is empty!!\n" + TextColor.ANSI_RESET);
         else {
-            for (StudyGroup group : client.groups) {
-                System.out.println(group.toString());
-            }
+            client.groups.stream().forEach(System.out::println);
         }
     }
 

@@ -14,9 +14,8 @@ public class HelpCommand extends Command {
 
   @Override
   public void execute(Client client, String[] args) throws Exception {
-    for (Command command : client.commands.values()) {
-      System.out.println(command.getName() + ": " + command.getDescription());
-    }
+    client.commands.values().stream()
+            .forEach((command -> System.out.println(command.getName() + ": " + command.getDescription())));
     System.out.println();
   }
 }

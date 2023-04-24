@@ -2,7 +2,7 @@ package com.commands;
 
 import com.auxiliary.TextColor;
 import com.client.Client;
-import com.study_group.StudyGroup;
+import com.study_group.StudyGroup;import java.util.ArrayList;
 
 /** Shows those groups which names contain certain substring */
 public class FilterNameCommand extends Command {

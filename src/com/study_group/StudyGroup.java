@@ -48,12 +48,7 @@ public class StudyGroup {
    * @return StudyGroup
    */
   public static StudyGroup findByName(LinkedList<StudyGroup> groups, String name) {
-    for (StudyGroup group : groups) {
-      if (group.getName().equals(name)) {
-        return group;
-      }
-    }
-    return null;
+    return groups.stream().filter(group -> group.getName().equals(name)).findFirst().orElse(null);
   }
 
   /**

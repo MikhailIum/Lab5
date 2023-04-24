@@ -76,9 +76,9 @@ public class Check {
    * @return true/false
    */
   public static boolean checkName(String name) {
-    if (name == null || name.equals("")) {
+    if (name == null || name.equals("") || name.replace(" ", "").equals("")) {
       System.out.println(
-          TextColor.ANSI_RED + "Field 'name' can't be an empty string" + TextColor.ANSI_RESET);
+          TextColor.ANSI_RED + "Field 'name' should consist of at least one character" + TextColor.ANSI_RESET);
       return false;
     } else return true;
   }

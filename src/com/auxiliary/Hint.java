@@ -1,6 +1,9 @@
 package com.auxiliary;
 
 import com.client.Client;
+import com.study_group.StudyGroup;
+import java.util.Iterator;
+import java.util.stream.Collectors;
 
 /** Gives user a hint about what he\she can print */
 public class Hint {
@@ -20,9 +23,11 @@ public class Hint {
   public static void nameHint(int numberOfArgs, Client client) {
     checkHasAnArgument(numberOfArgs);
     System.out.print("Possible names:\n" + "{");
-    for (int i = 0; i < client.groups.size() - 1; i++) {
-      System.out.print(client.groups.get(i).getName() + ", ");
-    }
+
+    client.groups.stream()
+        .limit(client.groups.size() - 1)
+        .forEach(studyGroup -> System.out.print(studyGroup.getName() + ", "));
+
     System.out.print(client.groups.getLast().getName());
     System.out.println("}" + TextColor.ANSI_RESET);
   }

@@ -5,6 +5,7 @@ import com.auxiliary.TextColor;
 import com.client.Client;
 import com.study_group.StudyGroup;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 /**
@@ -23,9 +24,16 @@ public class SaveCommand extends Command {
         }
         OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(client.FILE_PATH));
 
-        for (StudyGroup group : client.groups) {
-            out.write(group.getParams());
-        }
+        client.groups.stream()
+        .forEach(
+            group -> {
+              try {
+                out.write(group.getParams());
+              } catch (IOException e) {
+                throw new RuntimeException(e);
+              }
+            });
+
         System.out.println("Collection is successfully saved!\n");
         ExitCommand.isSaved = true;
         out.close();

@@ -38,7 +38,7 @@ public class CommandMapMaker {
         "filter_greater_than_group_admin",
         new FilterAdminCommand(
             "filter_greater_than_group_admin",
-            "show admins whose name is lexicographically more than written one"));
+            "show admins whose name is lexicographically greater than written one"));
     commands.put(
         "filter_contains_name",
         new FilterNameCommand(
